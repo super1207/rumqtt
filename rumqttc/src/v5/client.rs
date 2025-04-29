@@ -46,7 +46,7 @@ impl From<TrySendError<Request>> for ClientError {
 /// from the broker, i.e. move ahead.
 #[derive(Clone, Debug)]
 pub struct AsyncClient {
-    request_tx: Sender<Request>,
+    pub request_tx: Sender<Request>,
 }
 
 impl AsyncClient {
@@ -465,7 +465,7 @@ fn get_ack_req(publish: &Publish) -> Option<Request> {
 /// An asynchronous channel handle can also be extracted if necessary.
 #[derive(Clone)]
 pub struct Client {
-    client: AsyncClient,
+    pub client: AsyncClient,
 }
 
 impl Client {
